@@ -7,6 +7,7 @@ import 'package:flutterfire_trial0/pages/signin_page.dart';
 import 'package:flutterfire_trial0/pages/signup_page.dart';
 import 'package:flutterfire_trial0/pages/splash_page.dart';
 import 'package:flutterfire_trial0/providers/auth/auth_provider.dart';
+import 'package:flutterfire_trial0/providers/signin/signin_provider.dart';
 import 'package:flutterfire_trial0/repositories/auth_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -43,6 +44,10 @@ class MyApp extends StatelessWidget {
           update: (BuildContext context, fbAuth.User? userStream,
                   AuthProvider? authProvider) =>
               authProvider!..update(userStream),
+        ),
+        ChangeNotifierProvider<SigninProvider>(
+          create: (context) =>
+              SigninProvider(authRepository: context.read<AuthRepository>()),
         )
       ],
       child: MaterialApp(
