@@ -8,6 +8,7 @@ import 'package:flutterfire_trial0/pages/signup_page.dart';
 import 'package:flutterfire_trial0/pages/splash_page.dart';
 import 'package:flutterfire_trial0/providers/auth/auth_provider.dart';
 import 'package:flutterfire_trial0/providers/signin/signin_provider.dart';
+import 'package:flutterfire_trial0/providers/signup/signup_provider.dart';
 import 'package:flutterfire_trial0/repositories/auth_repository.dart';
 import 'package:provider/provider.dart';
 
@@ -48,6 +49,10 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<SigninProvider>(
           create: (context) =>
               SigninProvider(authRepository: context.read<AuthRepository>()),
+        ),
+        ChangeNotifierProvider<SignupProvider>(
+          create: (context) =>
+              SignupProvider(authRepository: context.read<AuthRepository>()),
         )
       ],
       child: MaterialApp(
