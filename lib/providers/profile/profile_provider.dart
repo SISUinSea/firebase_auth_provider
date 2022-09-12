@@ -26,6 +26,7 @@ class ProfileProvider with ChangeNotifier {
     } on CustomError catch (e) {
       _state = _state.copyWith(profileStatus: ProfileStatus.error);
       notifyListeners();
+      throw CustomError(code: e.code, message: e.message, plugin: e.plugin);
     }
   }
 }
