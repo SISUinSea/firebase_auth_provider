@@ -1,5 +1,8 @@
 # flutterfire_trial0
 
+# [Document](https://funny-office-83f.notion.site/FlutterFire-Authentication-Demonstration-App-Document-15baf81700c14dde82e78b9a5ab31e60)
+
+
 A new Flutter project.
 
 ## Getting Started
